@@ -84,21 +84,23 @@ class ProductList extends StatelessWidget {
                     height: 20,
                   ),
                   //product card
-                  SizedBox(
-                    height: 1000,
-                    width: 1000,
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, mainAxisSpacing: 10),
-                        itemCount: productcount,
-                        itemBuilder: (context, index) {
-                          return ProductCard(
-                            imageurl: "${products![index]['imageUrl']}",
-                            productName: "${products[index]['title']}",
-                            price: products[index]['price'],
-                          );
-                        }),
+                  Center(
+                    child: SizedBox(
+                      height: 1000,
+                      width: 1000,
+                      child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2, mainAxisSpacing: 10),
+                          itemCount: productcount,
+                          itemBuilder: (context, index) {
+                            return ProductCard(
+                              imageurl: "${products![index]['imageUrl']}",
+                              productName: "${products[index]['title']}",
+                              price: products[index]['price'],
+                            );
+                          }),
+                    ),
                   )
                 ],
               ),

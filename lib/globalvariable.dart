@@ -6,7 +6,7 @@ final resturants = [
         'id': 0,
         'title': 'fish',
         'price': 70,
-        'imageUrl': "assets/images/profile.jpg",
+        'imageUrl': "assets/images/fish.png",
       },
       {
         'id': 1,
