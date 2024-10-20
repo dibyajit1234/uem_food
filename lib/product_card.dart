@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageurl;
+  final String productName;
+  final int price;
   const ProductCard({
     super.key,
+    required this.productName,
     required this.imageurl,
+    required this.price,
   });
 
   @override
@@ -23,7 +27,8 @@ class ProductCard extends StatelessWidget {
                 height: 80,
               ),
             ),
-            Text('hllp')
+            Text(productName),
+            Text("${price}  ₹"),
           ],
         ),
       ),

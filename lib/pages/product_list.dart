@@ -94,7 +94,9 @@ class ProductList extends StatelessWidget {
                         itemCount: productcount,
                         itemBuilder: (context, index) {
                           return ProductCard(
-                            imageurl: "${products![0]['imageUrl']}",
+                            imageurl: "${products![index]['imageUrl']}",
+                            productName: "${products[index]['title']}",
+                            price: products[index]['price'],
                           );
                         }),
                   )
