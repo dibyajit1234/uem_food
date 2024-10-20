@@ -61,7 +61,10 @@ class ProductList extends StatelessWidget {
                       child: TextField(
                         cursorHeight: 20,
                         decoration: InputDecoration(
-                          prefixIcon: const Icon(Icons.search),
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            color: Color.fromARGB(255, 187, 15, 3),
+                          ),
                           hintText: "search",
                           filled: true,
                           border: border,
@@ -76,6 +79,7 @@ class ProductList extends StatelessWidget {
                       ),
                     ),
                   ),
+                  //gap
                   const SizedBox(
                     height: 20,
                   ),
@@ -84,11 +88,14 @@ class ProductList extends StatelessWidget {
                     height: 1000,
                     width: 1000,
                     child: GridView.builder(
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2, mainAxisSpacing: 10),
                         itemCount: productcount,
                         itemBuilder: (context, index) {
-                          return const ProductCard();
+                          return ProductCard(
+                            imageurl: "${products![0]['imageUrl']}",
+                          );
                         }),
                   )
                 ],
