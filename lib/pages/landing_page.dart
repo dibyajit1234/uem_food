@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uem_food/pages/home_page.dart';
+// import 'package:uem_food/pages/home_page.dart';
+import 'package:uem_food/pages/product_list.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -7,14 +8,15 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        //container for written text
         child: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: <Color>[
-                 Color.fromARGB(255, 255, 141, 141),
-                 Color.fromARGB(255, 255, 17, 0)
+                Color.fromARGB(255, 255, 141, 141),
+                Color.fromARGB(255, 255, 0, 0)
               ],
             ),
           ),
@@ -23,7 +25,7 @@ class LandingPage extends StatelessWidget {
               const Expanded(
                 child: Center(
                   child: Text(
-                    "Foo",
+                    "Food go",
                     style: TextStyle(
                         fontSize: 80,
                         color: Colors.white,
@@ -31,13 +33,15 @@ class LandingPage extends StatelessWidget {
                   ),
                 ),
               ),
+              //container for tap to continue
               Container(
                   margin: const EdgeInsets.only(bottom: 50),
+                  //textbutton to navigate
                   child: TextButton(
                       onPressed: () {
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return const HomePage();
+                          return const ProductList();
                         }));
                       },
                       child: const Text(
