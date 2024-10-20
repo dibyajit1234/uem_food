@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ProductList extends StatelessWidget {
+  const ProductList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final border = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide(
+        color: Colors.white,
+        width: 2.5,
+      ),
+    );
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -12,7 +19,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
@@ -31,10 +38,31 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-              Text(
+              const Text(
                 'Order your favourite food!',
                 style: TextStyle(fontFamily: "order", fontSize: 17),
-              )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Expanded(
+                child: TextField(
+                  cursorHeight: 20,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    hintText: "search",
+                    filled: true,
+                    border: border,
+                    enabledBorder: border,
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
