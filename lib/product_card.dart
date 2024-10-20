@@ -27,12 +27,18 @@ class ProductCard extends StatelessWidget {
               Center(
                 child: Image(
                   image: AssetImage(imageurl),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
               ),
-              Text(productName),
-              Text("${price}  ₹"),
+              Padding(
+                padding: const EdgeInsets.only(left: 6.0),
+                child: Text(productName),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text("$price ₹"),
+              ),
             ],
           ),
         ),

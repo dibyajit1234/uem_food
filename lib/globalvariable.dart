@@ -26,6 +26,12 @@ final resturants = [
         'price': 35,
         'imageUrl': "assets/images/profile.jpg",
       },
+      {
+        'id': 4,
+        'title': 'chai',
+        'price': 10,
+        'imageUrl': "assets/images/profile.jpg",
+      },
     ]
   },
   {

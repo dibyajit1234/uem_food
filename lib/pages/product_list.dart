@@ -52,7 +52,7 @@ class ProductList extends StatelessWidget {
                   ),
                   //gap sized box
                   const SizedBox(
-                    height: 30,
+                    height: 35,
                   ),
                   //search bar
                   Center(
@@ -81,7 +81,7 @@ class ProductList extends StatelessWidget {
                   ),
                   //gap
                   const SizedBox(
-                    height: 20,
+                    height: 40,
                   ),
                   //product card
                   Center(
