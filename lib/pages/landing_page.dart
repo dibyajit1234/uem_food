@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uem_food/pages/home_page.dart';
+// import 'package:uem_food/pages/home_page.dart';
 import 'package:uem_food/pages/product_list.dart';
 
 class LandingPage extends StatelessWidget {

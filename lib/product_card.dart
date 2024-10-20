@@ -6,7 +6,6 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Card(
       child: Text("${resturants[0]['canteen']}"),
     );
