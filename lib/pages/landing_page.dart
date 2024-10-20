@@ -25,7 +25,7 @@ class LandingPage extends StatelessWidget {
               const Expanded(
                 child: Center(
                   child: Text(
-                    "Food go",
+                    "Foo",
                     style: TextStyle(
                         fontSize: 80,
                         color: Colors.white,
