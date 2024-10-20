@@ -1,7 +1,7 @@
 final resturants = [
   {
     'canteen': 'bengali',
-    'products': {
+    'products': [
       {
         'id': 0,
         'title': 'fish',
@@ -25,12 +25,12 @@ final resturants = [
         'title': 'bred-omlet',
         'price': 35,
         'imageUrl': "image",
-      }
-    }
+      },
+    ]
   },
   {
     'canteen': 'night',
-    'products': {
+    'products': [
       {
         'id': 0,
         'title': 'jimjam',
@@ -55,6 +55,6 @@ final resturants = [
         'price': 45,
         'imageUrl': "image",
       }
-    }
+    ]
   }
 ];

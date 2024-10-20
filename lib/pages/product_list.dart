@@ -1,69 +1,99 @@
 import 'package:flutter/material.dart';
+import 'package:uem_food/globalvariable.dart';
+import 'package:uem_food/product_card.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<dynamic>? products = resturants[0]['products'] as List<dynamic>?;
+    int? productcount = products?.length;
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(30),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         color: Colors.white,
         width: 2.5,
       ),
     );
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
+                  //foodgo and logo
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Foodgo",
-                        style: TextStyle(fontFamily: "updock", fontSize: 45),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Foodgo",
+                            style:
+                                TextStyle(fontFamily: "updock", fontSize: 45),
+                          ),
+                          //Text("order your favourite")
+                        ],
                       ),
-                      //Text("order your favourite")
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                            "/home/dibyajit/AndroidStudioProjects/uem_food/assets/images/profile.jpg"),
+                      )
                     ],
                   ),
-                  CircleAvatar(
-                    backgroundImage: AssetImage(
-                        "/home/dibyajit/AndroidStudioProjects/uem_food/assets/images/profile.jpg"),
-                  )
-                ],
-              ),
-              const Text(
-                'Order your favourite food!',
-                style: TextStyle(fontFamily: "order", fontSize: 17),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Expanded(
-                child: TextField(
-                  cursorHeight: 20,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
-                    hintText: "search",
-                    filled: true,
-                    border: border,
-                    enabledBorder: border,
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.black,
+                  const Text(
+                    'Order your favourite food!',
+                    style: TextStyle(fontFamily: "order", fontSize: 17),
+                  ),
+                  //gap sized box
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  //search bar
+                  Center(
+                    child: SizedBox(
+                      width: 320,
+                      child: TextField(
+                        cursorHeight: 20,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          hintText: "search",
+                          filled: true,
+                          border: border,
+                          enabledBorder: border,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  //product card
+                  SizedBox(
+                    height: 1000,
+                    width: 1000,
+                    child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                        itemCount: productcount,
+                        itemBuilder: (context, index) {
+                          return ProductCard();
+                        }),
+                  )
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
